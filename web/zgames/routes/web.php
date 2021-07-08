@@ -21,7 +21,7 @@ Route:: view("/","registrar_consola")->name("registrar_consola");
 //Route::get('/registrar_juego', function () {
   //  return view('registrar_juego');
 //});
-Route:: view("/registrar_juego","registrar_juego")->name("registrar_juego");
+Route:: view("/agregar_juego","agregar_juego")->name("agregar_juego");
 //Route::get('/registrar_consola', function () {
   //  return view('registrar_consola');
 //});
