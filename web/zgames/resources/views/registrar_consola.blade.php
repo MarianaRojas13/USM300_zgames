@@ -24,7 +24,7 @@
                   </div>
               </div>
               <div class="card-footer d-grid gap-1">
-                  <button type="button" class="btn btn-primary">Registrar</button>
+                  <button id="registrar-btn" type="button" class="btn btn-primary">Registrar</button>
               </div>
           </div>
       </div>
@@ -32,6 +32,7 @@
 
 @endsection
 @section('javascript')
+    <script src="{{asset("js/servicios/consolasService.js")}}"></script>
     <script src="{{asset('js/registrar_consola.js')}}"></script>
     
 @endsection

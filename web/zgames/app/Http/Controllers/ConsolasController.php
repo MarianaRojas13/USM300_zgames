@@ -16,13 +16,26 @@ class ConsolasController extends Controller
             return $consolas;
         }
     /*Esta funcion va a registrar ina consola de ejemplo */
-    public function crearConsola(){
+    public function crearConsola(Request $request){
     //equivalente a un insert into
+        $input = $request->all();
+        if(empty($input["nombre"]) || strlen($input['nombre']) == 0){
+            return response()->json([
+                'message' => 'Nombre es obligatorio'
+            ], 404);
+
+        }
         
+        if(empty($input["anio"]) || strlen($input['anio']) == 0){
+            return response()->json([
+                'message' => 'Año es obligatorio'
+            ], 404);
+
+        }
         $consola=new Consola();
-        $consola->nombre="Nintendo Switch";
-        $consola->marca="Nintendo";
-        $consola->anio=2015;
+        $consola->nombre=$input["nombre"];
+        $consola->marca=$input["marca"];
+        $consola->anio=$input["anio"];
         $consola->save();
         return $consola;
     }       
