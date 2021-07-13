@@ -1,6 +1,5 @@
 const cargarMarcas=async()=>{
-    let resultado= await axios.get("api/marcas/get");
-    let marcas=resultado.data;
+    let marcas=await getMarcas();
     let marcaSelect=document.querySelector("#marca-select");
 
     marcas.forEach(m=>{
@@ -9,7 +8,10 @@ const cargarMarcas=async()=>{
         marcaSelect.appendChild(option);
     });
 }
-cargarMarcas();
+
+document.addEventListener("DOMContentLoaded", ()=>{
+    cargarMarcas();
+});
 document.querySelector("#registrar-btn").addEventListener("click",async()=>{
     let nombre=document.querySelector("#nombre-txt").value;
     let marca=document.querySelector("#marca-select").value;
@@ -31,5 +33,7 @@ document.querySelector("#registrar-btn").addEventListener("click",async()=>{
     consola.marca=marca;
     consola.anio=anio;
     let res=await crearConsola(consola);
-    Swal.fire("Consola Creada","Consola creada exitosamente","info");
+    await Swal.fire("Consola Creada","Consola creada exitosamente","info");
+    //redirigir a otra pagina:
+    window.location.href="ver_consola";
 });

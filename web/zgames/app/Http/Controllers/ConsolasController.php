@@ -38,5 +38,20 @@ class ConsolasController extends Controller
         $consola->anio=$input["anio"];
         $consola->save();
         return $consola;
-    }       
+    }
+    public function eliminarConsola(Request $request){
+        $input = $request->all();
+        $id=$input ["id"];
+        $consola=Consola::findOrFail($id);//es fail!!!!aaaah
+        $consola->delete();
+        return "ok";
+
+    }
+    public function filtrarConsolas(Request $request){
+        $input=$request->all();
+        $filtro=$input["filtro"];
+        $consolas=Consola::where("marca",$filtro)->get();
+        return $consolas;
+    }
+    
 }

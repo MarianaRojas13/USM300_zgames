@@ -33,6 +33,7 @@
 @endsection
 @section('javascript')
     <script src="{{asset("js/servicios/consolasService.js")}}"></script>
+    <script src="{{asset("js/servicios/marcasService.js")}}"></script>
     <script src="{{asset('js/registrar_consola.js')}}"></script>
     
 @endsection
