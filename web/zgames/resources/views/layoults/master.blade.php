@@ -21,7 +21,7 @@
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                   <a class="nav-link active" aria-current="page" href="{{route('registrar_consola')}}">Registrar Consola</a>
-                  <a class="nav-link" href="{{route('agregar_juego')}}">Agregar Juego</a>
+                  <a class="nav-link" href="{{route('registrar_juego')}}">Agregar Juego</a>
                   <a class="nav-link" href="{{route('ver_consola')}}">Ver Consola</a>
                   <a class="nav-link disabled" href="{{route('ver_juegos')}}" >Ver Juegos</a>
                 </div>
